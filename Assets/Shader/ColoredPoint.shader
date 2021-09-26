@@ -17,7 +17,7 @@
 
         struct Input
         {
-            float worldPos;
+            float3 worldPos;
         };
 
         half _Glossiness;
@@ -25,7 +25,7 @@
 
         void surf(Input IN, inout SurfaceOutputStandard o)
         {
-            o.Albedo.rg = IN.worldPos.x * 0.5 + 0.5;
+            o.Albedo.rgb = IN.worldPos.xyz * 0.5 + 0.5;
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
             o.Alpha = 1;
